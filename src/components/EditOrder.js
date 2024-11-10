@@ -7,7 +7,7 @@ const EditOrder = ({ orderId }) => {
     // Function to fetch order details when the component mounts
     useEffect(() => {
         const fetchOrderDetails = async () => {
-            const response = await fetch(`https://custom-frames-one.vercel.app/api/orders/${orderId}`);
+            const response = await fetch(`/api/orders/${orderId}`);
             const data = await response.json();
             setOrderDetails(data.order); // Assuming the response has an 'order' object
         };
@@ -17,7 +17,7 @@ const EditOrder = ({ orderId }) => {
 
     const updateOrder = async (orderId, updatedData) => {
         try {
-            const response = await fetch(`https://custom-frames-one.vercel.app/api/orders/${orderId}`, {
+            const response = await fetch(`/api/orders/${orderId}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

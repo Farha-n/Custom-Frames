@@ -8,7 +8,7 @@ function PaymentHistory() {
   useEffect(() => {
     const fetchPayments = async () => {
       try {
-        const response = await axios.get('https://custom-frames-one.vercel.app/api/payments'); // Create this endpoint
+        const response = await axios.get('/api/payments'); // Create this endpoint
         setPayments(response.data);
       } catch (error) {
         console.error('Error fetching payments:', error);
