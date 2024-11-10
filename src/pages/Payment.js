@@ -34,7 +34,7 @@ function Payment() {
 
     try {
       // Make the request but don't store the response
-      await axios.post('http://localhost:5000/api/payments', form, {
+      await axios.post('https://custom-frames-one.vercel.app/api/payments', form, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
 

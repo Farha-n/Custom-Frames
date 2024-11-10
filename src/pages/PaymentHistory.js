@@ -8,7 +8,7 @@ function PaymentHistory() {
   useEffect(() => {
     const fetchPayments = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/payments'); // Create this endpoint
+        const response = await axios.get('https://custom-frames-one.vercel.app/api/payments'); // Create this endpoint
         setPayments(response.data);
       } catch (error) {
         console.error('Error fetching payments:', error);
@@ -33,7 +33,7 @@ function PaymentHistory() {
         <p>Address: {payment.address}</p>
         <p>
             Screenshot: 
-            <a href={`http://localhost:5000/${payment.paymentScreenshot}`} target="_blank" rel="noopener noreferrer">View Screenshot</a>
+            <a href={`http:///${payment.paymentScreenshot}`} target="_blank" rel="noopener noreferrer">View Screenshot</a>
         </p>
     </li>
 ))}
