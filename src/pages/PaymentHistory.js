@@ -33,7 +33,7 @@ function PaymentHistory() {
         <p>Address: {payment.address}</p>
         <p>
             Screenshot: 
-            <a href={`http:///${payment.paymentScreenshot}`} target="_blank" rel="noopener noreferrer">View Screenshot</a>
+            <a href={`/${payment.paymentScreenshot}`} target="_blank" rel="noopener noreferrer">View Screenshot</a>
         </p>
     </li>
 ))}
