@@ -34,7 +34,7 @@ function Payment() {
 
     try {
       // Make the request but don't store the response
-      await axios.post('/api/payments', form, {
+      await axios.post('https://custom-backend-lkfg.onrender.com/api/payments', form, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
 

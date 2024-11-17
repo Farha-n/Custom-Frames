@@ -47,7 +47,7 @@ const Payment = mongoose.model('Payment', paymentSchema);
 const upload = multer({ dest: 'uploads/' });
 
 // Order Route
-app.post('/api/orders', async (req, res) => {
+app.post('https://custom-backend-lkfg.onrender.com/api/orders', async (req, res) => {
     const orderData = req.body;
     try {
         const newOrder = new Order(orderData);
@@ -59,7 +59,7 @@ app.post('/api/orders', async (req, res) => {
 });
 
 // Payment Route
-app.post('/api/payments', upload.single('paymentScreenshot'), async (req, res) => {
+app.post('https://custom-backend-lkfg.onrender.com/api/payments', upload.single('paymentScreenshot'), async (req, res) => {
     const { name, phone, address } = req.body;
     const paymentScreenshot = req.file ? req.file.path : null;
 
@@ -73,7 +73,7 @@ app.post('/api/payments', upload.single('paymentScreenshot'), async (req, res) =
 });
 
 // Get Payments Route
-app.get('/api/payments', async (req, res) => {
+app.get('https://custom-backend-lkfg.onrender.com/api/payments', async (req, res) => {
     try {
         const payments = await Payment.find();
         res.status(200).json(payments);
